@@ -1,9 +1,8 @@
 import requests
 
-def getnav():
+def getdata():
     """
 
-    TODO: Take the name of fund and the option (dividend/growth) and give out nav
     :return:
     """
     url = 'https://www.amfiindia.com/spages/NAVAll.txt'
@@ -11,3 +10,16 @@ def getnav():
     response = requests.get(url=url)
 
     navs = response.text
+
+    return navs
+
+def getnav():
+    """
+
+    :return:
+    """
+    navs = getdata()
+    list_navs = navs.split('\n')
+    #print(len(list_navs))
+
+getnav()
