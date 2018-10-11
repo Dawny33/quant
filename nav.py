@@ -13,13 +13,23 @@ def getdata():
 
     return navs
 
-def getnav():
+def getnav(fund_name):
     """
 
     :return:
     """
     navs = getdata()
     list_navs = navs.split('\n')
-    #print(len(list_navs))
 
-getnav()
+    list_funds = []
+    for nav in list_navs:
+        if fund_name in nav:
+            # If multiple funds with the same string [Div/Growth variants]
+            list_funds.append(nav)
+
+    for fund in list_funds:
+        print("Fund Name: {0}; Nav: {1}".format(fund.split(';')[3], fund.split(';')[4]))
+
+
+fund = 'Parag Parikh Liquid Fund'
+print(getnav(fund))
