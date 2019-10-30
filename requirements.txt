@@ -1,1 +1,3 @@
 requests
+# alpha_vantage (currently using the bleeding-edge version)
+pytest

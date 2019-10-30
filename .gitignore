@@ -2,3 +2,4 @@
 src/config.ini
 src/data/*
 **/*.DS_Store
+**/*.pyc
