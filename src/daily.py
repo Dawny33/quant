@@ -5,7 +5,7 @@ import os
 import sys
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('src/config.ini')
 alphav_path = config['alphav_params']['path']
 key = config['api']['key']
 
@@ -31,7 +31,7 @@ def daily_pull(symbol: str):
         symbol: The name of the ticker symbol for which the data is needed 
     """
     data, meta_data = ts.get_daily(symbol, outputsize='full')
-    if not os.path.exists('data/'):
-        os.makedirs('data/')
-    with open('data/' + symbol + '.json', 'w') as fp:
+    if not os.path.exists('src/data/'):
+        os.makedirs('src/data/')
+    with open('src/data/' + symbol + '.json', 'w') as fp:
         json.dump(data, fp)
