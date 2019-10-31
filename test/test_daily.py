@@ -12,5 +12,4 @@ def test_daily_pull():
     assert isinstance(data, dict)
     assert isinstance(meta_data, dict)
     daily_pull(symbol)
-    assert os.path.isfile('data/' + symbol + '.json') == True
-
+    assert os.path.isfile('src/data/' + symbol + '.json') == True
